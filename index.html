@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Hello, world!</title>
+</head>
+
+<body>
+  <article>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <div class="title-section d-flex">
+            <h1 class="col">Hội Sâm</h1>
+            <button class="btn btn-primary reset-btn">Reset</button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="sidebar-item">
+            <div class="make-me-sticky list-detail">
+
+            </div>
+            <script id="item-detail" type="text/template">
+              {{#listPlayerData}}
+              <button class="btn btn-primary">
+                <div class="row">
+                  <div class="col">
+                      {{name}}
+                  </div>
+                  <div class="col">
+                      <span class="badge badge-light">{{money}}</span> 
+                    </div>
+                </div>
+                   
+              </button>
+              {{/listPlayerData}}
+              </script>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="content-section">
+            <p>
+              
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+
+
+
+  <!-- The Modal -->
+  <div class="modal fade" data-backdrop="static" data-keyboard="false" id="init-list-name">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h5 class="modal-title">Danh sách người chơi</h5>
+          <button type="button" class="btn btn-primary btn-done">Xong</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body list-name">
+           
+        </div>
+        <script id="item-name-init" type="text/template">
+          {{#listPlayerData}}
+            <div class="input-group my-1">
+                <input type="text" class="form-control txt-name" value="{{name}}">
+                <div class="input-group-append">
+                  <button class="btn btn-secondary btn-del-name">Xóa</button>
+                </div>
+              </div>
+            {{/listPlayerData}}
+          </script>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <div class="input-group">
+            <input type="text" class="form-control txt-name-add" placeholder="Tên người mới">
+            <div class="input-group-append">
+              <button class="btn btn-secondary btn-add">Thêm</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- The Modal -->
+  <div class="modal fade"  data-backdrop="static" data-keyboard="false" id="modal-transfers">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h5 class="modal-title">Nhận tiền từ</h5>
+          <button type="button" class="btn btn-primary transfers-done">Xong</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          
+        </div>
+        <script id="item-player-pay" type="text/template">
+          <div class="input-group my-1" idx={{idx}}>
+              <div class="input-group-prepend col">
+                <button class="btn btn-primary btn-block">{{name}}</button>
+              </div>
+              <input type="number" class="col form-control text-center" value="0">              
+            </div>
+        </script>
+       
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <div class="d-flex justify-content-center flex-wrap">
+            <button class="btn badge badge-primary p-2 m-1">0</button>
+            <button class="btn badge badge-primary p-2 m-1">1000</button>
+            <button class="btn badge badge-primary p-2 m-1">2000</button>
+            <button class="btn badge badge-primary p-2 m-1">3000</button>
+            <button class="btn badge badge-primary p-2 m-1">4000</button>
+            <button class="btn badge badge-primary p-2 m-1">7000</button>
+            <button class="btn badge badge-primary p-2 m-1">10000</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
